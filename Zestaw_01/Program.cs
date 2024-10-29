@@ -1,6 +1,5 @@
 ﻿namespace Zestaw_01;
 using System;
-using System.Runtime.InteropServices;
 
 class Program
 {
@@ -16,24 +15,26 @@ class Program
     {
       Console.WriteLine("Wpisano znaki inne niż int.");
     }
+
+    string wejscie;
         
     switch(parsedInput)
     {
       case 1:
         Console.WriteLine("Wybrano podzestaw 1");
         Console.WriteLine("Wybierz zadanie z zakresu 1 - 5");
-                  
-        string zadanieStr = Console.ReadLine()!;
-        int zadanie;
+        wejscie = Console.ReadLine()!;
 
-        if(!int.TryParse(zadanieStr, out zadanie))
+        int parsedWejscie;
+        if(!int.TryParse(wejscie, out parsedWejscie))
         {
-          Console.WriteLine("Wpisano znaki inne niż int.");
+            Console.WriteLine("Wpisano znaki inne niż int.");
+            return;
         }
 
         Zestaw_01_1 zadania1 = new();
 
-        switch(zadanie)
+        switch(parsedWejscie)
         {
           case 1:
             zadania1.Zadanie_01(50);
@@ -51,7 +52,7 @@ class Program
             zadania1.Zadanie_05(5);
             break;
           default:
-            Console.WriteLine("Wybrano liczbe z poza zakresu 1 - 5");
+            Console.WriteLine("Wybrano liczbe z poza zakresu 1 - 5. Program zakoczy sie.");
             break;
           }
         break;
@@ -59,12 +60,12 @@ class Program
       case 2:
         Console.WriteLine("Wybrano podzestaw 2.");
         Console.WriteLine("Wybierz zadanie z zakresu 1 - 7:");
-        string wejscie = Console.ReadLine()!;
+        wejscie = Console.ReadLine()!;
 
-        int parsedWejscie;
         if(!int.TryParse(wejscie, out parsedWejscie))
         {
             Console.WriteLine("Wpisano znaki inne niż int.");
+            return;
         }
 
         Zestaw_01_2 zadania2 = new();
@@ -96,10 +97,53 @@ class Program
             Console.WriteLine($"Dzielna = {dzielna}, dzielnik = {dzielnik}");
             Console.WriteLine($"Wynik = {zadania2.Mod(dzielna, dzielnik)}.");
             break;
-        }
+          case 6:
+            double podstawa = 6;
+            int wykladnik = 3;
+            Console.WriteLine($"Podstawa = {podstawa}, wykladnik = {wykladnik}");
+            Console.WriteLine($"Wynik = {zadania2.power(podstawa, wykladnik)}");
+            break;
+          case 7:
+            int podstawaLogarytmu = 2;
+            double logarytmowana = 8;
+            Console.WriteLine($"Podstawa logarytmu = {podstawaLogarytmu}, liczba logarytmowana = {logarytmowana}.");
+            Console.WriteLine($"Wynik = {zadania2.logn(podstawaLogarytmu, logarytmowana)}");
+            break;
+          default:
+            Console.WriteLine("Nie wybrano liczby z zakresu 1 - 7. Program zakonczy sie.");
+            break;
+        } 
 
         break;
       case 3:
+        Console.WriteLine("Wybrano podsestaw 3");
+        Console.WriteLine("Wybierz zadanie (liczbe) z zakresu 1 - 6");
+
+        wejscie = Console.ReadLine()!;
+        
+        if(!int.TryParse(wejscie, out parsedWejscie))
+        {
+            Console.WriteLine("Wpisano znaki inne niż int.");
+        }
+
+        Zestaw_01_3 zadania3 = new();
+
+        switch(parsedWejscie){
+          case 1:
+            double[] tablica = [1,2,1];
+            Console.WriteLine($"Tablica = {string.Join(",", tablica)}");
+            zadania3.Zadanie_01(tablica);
+            break;
+          case 2:
+            Console.WriteLine("Under construction... Be patient");
+            break;
+          case 3:
+            int[] babelkowa = [1,2,1,3,5,6,1,2,4,9,0];
+            Console.WriteLine($"Tablica przed sortowaniem = {string.Join(",", babelkowa)}");
+            zadania3.Zadanie_02(babelkowa);
+            Console.WriteLine($"Tablica po sortowaniu = {string.Join(",", babelkowa)}");
+            break;
+        }
         break;
     }
   }

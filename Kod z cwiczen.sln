@@ -1,22 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zestaw_01", "Zestaw_01\Zestaw_01.csproj", "{79D0AB86-9184-4430-8E04-47108D6869EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zestaw_01", "Zestaw_01\Zestaw_01.csproj", "{DA00A55A-551E-4C44-B019-E05541B43741}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA00A55A-551E-4C44-B019-E05541B43741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA00A55A-551E-4C44-B019-E05541B43741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA00A55A-551E-4C44-B019-E05541B43741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA00A55A-551E-4C44-B019-E05541B43741}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{79D0AB86-9184-4430-8E04-47108D6869EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79D0AB86-9184-4430-8E04-47108D6869EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79D0AB86-9184-4430-8E04-47108D6869EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79D0AB86-9184-4430-8E04-47108D6869EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {013D4DAC-C70E-4E21-8F06-258EAD73D52B}
 	EndGlobalSection
 EndGlobal
