@@ -40,16 +40,16 @@ class Program
             zadania1.Zadanie_01(50);
             break;
           case 2:
-            zadania1.Zadanie_02();
+            zadania1.Zadanie_02(true);
             break;
           case 3:
-            zadania1.Zadanie_03(5);
+            zadania1.Zadanie_03(5, true);
             break;
           case 4:
-            zadania1.Zadanie_04(50);
+            zadania1.Zadanie_04(50, true);
             break;
           case 5:
-            zadania1.Zadanie_05(5);
+            zadania1.Zadanie_05(5, true);
             break;
           default:
             Console.WriteLine("Wybrano liczbe z poza zakresu 1 - 5. Program zakoczy sie.");
@@ -73,41 +73,41 @@ class Program
         switch(parsedWejscie)
         {
           case 1:
-            Console.WriteLine($"Wynik = {zadania2.dziel(25,5)}");
+            Console.WriteLine($"Wynik = {zadania2.dziel(25,5, true)}");
             break;
           case 2:
-            Console.WriteLine($"Wynik = {zadania2.Min()}");
+            Console.WriteLine($"Wynik = {zadania2.Min(true)}");
             break;
           case 3:
             int indeks = 2;
             Console.WriteLine("indeks = " + indeks);
             Console.WriteLine($"Tablica przed = [{string.Join(",", _A)}]");
-            zadania2.zamien2(indeks, _A);
+            zadania2.zamien2(indeks, _A, true);
             Console.WriteLine($"Tablica po = [{string.Join(",", _A)}]");
             break;
           case 4:
             int liczba1 = 10;
             int liczba2 = 5;
             Console.WriteLine($"Liczba1 = {liczba1}, liczba2 = {liczba2}");
-            Console.WriteLine($"Wynik = {zadania2.NWD(liczba1, liczba2)}.");
+            Console.WriteLine($"Wynik = {zadania2.NWD(liczba1, liczba2, true)}.");
             break;
           case 5:
             int dzielna = 10;
             int dzielnik = 7;
             Console.WriteLine($"Dzielna = {dzielna}, dzielnik = {dzielnik}");
-            Console.WriteLine($"Wynik = {zadania2.Mod(dzielna, dzielnik)}.");
+            Console.WriteLine($"Wynik = {zadania2.Mod(dzielna, dzielnik, true)}.");
             break;
           case 6:
             double podstawa = 6;
             int wykladnik = 3;
             Console.WriteLine($"Podstawa = {podstawa}, wykladnik = {wykladnik}");
-            Console.WriteLine($"Wynik = {zadania2.power(podstawa, wykladnik)}");
+            Console.WriteLine($"Wynik = {zadania2.power(podstawa, wykladnik, true)}");
             break;
           case 7:
             int podstawaLogarytmu = 2;
             double logarytmowana = 8;
             Console.WriteLine($"Podstawa logarytmu = {podstawaLogarytmu}, liczba logarytmowana = {logarytmowana}.");
-            Console.WriteLine($"Wynik = {zadania2.logn(podstawaLogarytmu, logarytmowana)}");
+            Console.WriteLine($"Wynik = {zadania2.logn(podstawaLogarytmu, logarytmowana, true)}");
             break;
           default:
             Console.WriteLine("Nie wybrano liczby z zakresu 1 - 7. Program zakonczy sie.");
@@ -131,7 +131,7 @@ class Program
         switch(parsedWejscie){
           case 1:
             double[] tablica = [1,2,1];
-            Console.WriteLine($"Tablica = {string.Join(",", tablica)}");
+            Console.WriteLine($"Tablica = {string.Join(",", tablica, true)}");
             zadania3.Zadanie_01(tablica);
             break;
           case 2:
@@ -140,8 +140,22 @@ class Program
           case 3:
             int[] babelkowa = [1,2,1,3,5,6,1,2,4,9,0];
             Console.WriteLine($"Tablica przed sortowaniem = {string.Join(",", babelkowa)}");
-            zadania3.Zadanie_02(babelkowa);
+            zadania3.Zadanie_03(babelkowa, true);
             Console.WriteLine($"Tablica po sortowaniu = {string.Join(",", babelkowa)}");
+            break;
+          case 4:
+            int[] bisekcja = [1,2,1,3,5,6,1,2,4,9,0];
+            Console.WriteLine($"Tablica przed sortowaniem = {string.Join(",",bisekcja)}");
+            int szukana = 5;
+            Console.WriteLine($"Szukana = {szukana}");
+            int indeks = zadania3.Zadanie_04(szukana, bisekcja, true);
+            Console.WriteLine($"Indeks szukanej = {szukana} w tablicy = {string.Join(",",bisekcja)} jest równy = {indeks}");
+            break;
+          case 5:
+            zadania3.Zadanie_05(1,5,6, true);
+            break;
+          case 6:
+            zadania3.Zadanie_06(1,5,6,0.001);
             break;
         }
         break;
