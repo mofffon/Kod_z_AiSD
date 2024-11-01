@@ -10,14 +10,14 @@ class Program
     Console.WriteLine("Wybierz podzestaw, liczbe od 1 do 3 (1 - podzestawzestaw_1a, 2 - podzestawzestaw_2, 3 - podzestaw_3_dodatkowe_zadania):" );
     string input = Console.ReadLine()!;
 
-    int parsedInput;
-    if(!int.TryParse(input, out parsedInput) || parsedInput <= 0 || parsedInput > 3)
+    if(!int.TryParse(input, out int parsedInput) || parsedInput <= 0 || parsedInput > 3)
     {
       Console.WriteLine("Wpisano znaki inne niż int.");
     }
 
     string wejscie;
-        
+    int parsedWejscie;
+
     switch(parsedInput)
     {
       case 1:
@@ -25,7 +25,6 @@ class Program
         Console.WriteLine("Wybierz zadanie z zakresu 1 - 5");
         wejscie = Console.ReadLine()!;
 
-        int parsedWejscie;
         if(!int.TryParse(wejscie, out parsedWejscie))
         {
             Console.WriteLine("Wpisano znaki inne niż int.");
@@ -52,7 +51,7 @@ class Program
             zadania1.Zadanie_05(5, true);
             break;
           default:
-            Console.WriteLine("Wybrano liczbe z poza zakresu 1 - 5. Program zakoczy sie.");
+            Console.WriteLine("Wybrano liczbe z poza zakresu 1 - 5. Program zaknoczy sie.");
             break;
           }
         break;
@@ -123,7 +122,7 @@ class Program
         
         if(!int.TryParse(wejscie, out parsedWejscie))
         {
-            Console.WriteLine("Wpisano znaki inne niż int.");
+          Console.WriteLine("Wpisano znaki inne niż liczba calkowita.");
         }
 
         Zestaw_01_3 zadania3 = new();
@@ -158,7 +157,7 @@ class Program
             zadania3.Zadanie_06(1,5,6,0.001);
             break;
         }
-        break;
+      break;
     }
   }
 }
